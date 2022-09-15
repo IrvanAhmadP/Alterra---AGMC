@@ -11,14 +11,18 @@ func New() *echo.Echo {
 	v1 := e.Group("v1/")
 
 	book := v1.Group("books")
-	book.GET("", controllers.GetBook)
+	book.GET("", controllers.GetBooks)
 	book.GET("/:bookID", controllers.GetBookByID)
 	book.POST("", controllers.AddBook)
 	book.PUT("/:bookID", controllers.UpdateBook)
 	book.DELETE("/:bookID", controllers.DeleteBook)
 
 	user := v1.Group("users")
-	user.GET("", controllers.GetUser)
+	user.GET("", controllers.GetUsers)
+	user.GET("/:userID", controllers.GetUserByID)
+	user.POST("", controllers.AddUser)
+	user.PUT("/:userID", controllers.UpdateUser)
+	user.DELETE("/:userID", controllers.DeleteUser)
 
 	return e
 }
