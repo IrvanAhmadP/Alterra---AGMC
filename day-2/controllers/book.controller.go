@@ -36,7 +36,7 @@ var books = []models.Book{
 	},
 }
 
-func GetBook(c echo.Context) error {
+func GetBooks(c echo.Context) error {
 	return c.JSON(http.StatusOK, map[string]interface{}{
 		"status": "success",
 		"data":   books,
@@ -61,14 +61,12 @@ func GetBookByID(c echo.Context) error {
 		}
 	}
 
-	return c.JSON(http.StatusNoContent, map[string]interface{}{
-		"status":  "failed",
-		"message": "Book not found",
-	})
+	return c.JSON(http.StatusNoContent, "")
 }
 
 func AddBook(c echo.Context) error {
-	book := models.Book{}
+	var book models.Book
+
 	c.Bind(&book)
 	book.ID = time.Now().Unix()
 	books = append(books, book)
@@ -118,10 +116,7 @@ func UpdateBook(c echo.Context) error {
 		}
 	}
 
-	return c.JSON(http.StatusNoContent, map[string]interface{}{
-		"status":  "failed",
-		"message": "Book not found",
-	})
+	return c.JSON(http.StatusNoContent, "")
 }
 
 func DeleteBook(c echo.Context) error {
@@ -143,8 +138,5 @@ func DeleteBook(c echo.Context) error {
 		}
 	}
 
-	return c.JSON(http.StatusNoContent, map[string]interface{}{
-		"status":  "failed",
-		"message": "Book not found",
-	})
+	return c.JSON(http.StatusNoContent, "")
 }
