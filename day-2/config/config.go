@@ -19,6 +19,7 @@ func GetConfig() map[string]string {
 	}
 
 	config := map[string]string{
+		"APP_ENV":     os.Getenv("APP_ENV"),
 		"DB_USERNAME": os.Getenv("DB_USERNAME"),
 		"DB_PASSWORD": os.Getenv("DB_PASSWORD"),
 		"DB_HOST":     os.Getenv("DB_HOST"),
