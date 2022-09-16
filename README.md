@@ -24,3 +24,15 @@ Do request to the following API target by using Postman environment, save the re
 
 Organize your code using MVC (create config, controllers, lib, models, routes)
 Create static CRUD API that meets requirements.
+
+## Day 3
+
+**Objective**
+
+- Log Implementation
+- Implementing JWT Auth for Protecting API
+
+**Tasks**
+
+- Implement **log middleware** to Day 2 task
+- Implement **JWT Auth middleware** based on reqirements
