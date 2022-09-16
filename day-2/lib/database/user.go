@@ -30,18 +30,20 @@ func AddUser(user models.User) error {
 	return nil
 }
 
-func UpdateUser(id string, user models.User) error {
-	if err := config.DB.Model(&models.User{}).Where("id = ?", id).Updates(&user).Error; err != nil {
-		return err
+func UpdateUser(id string, user models.User) (int64, error) {
+	result := config.DB.Model(&models.User{}).Where("id = ?", id).Updates(&user)
+	if result.Error != nil {
+		return result.RowsAffected, result.Error
 	}
-	return nil
+	return result.RowsAffected, nil
 }
 
-func DeleteUser(id string) error {
+func DeleteUser(id string) (int64, error) {
 	var users []models.User
 
-	if err := config.DB.Delete(&users, id).Error; err != nil {
-		return err
+	result := config.DB.Delete(&users, id)
+	if result.Error != nil {
+		return result.RowsAffected, result.Error
 	}
-	return nil
+	return result.RowsAffected, nil
 }

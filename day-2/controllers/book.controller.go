@@ -46,7 +46,7 @@ func GetBooks(c echo.Context) error {
 func GetBookByID(c echo.Context) error {
 	id, err := strconv.ParseInt(c.Param("bookID"), 10, 64)
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]interface{}{
+		return c.JSON(http.StatusBadRequest, map[string]string{
 			"status":  "failed",
 			"message": "Book ID is invalid",
 		})
@@ -61,7 +61,10 @@ func GetBookByID(c echo.Context) error {
 		}
 	}
 
-	return c.JSON(http.StatusNoContent, "")
+	return c.JSON(http.StatusBadRequest, map[string]string{
+		"status":  "failed",
+		"message": "Book not found",
+	})
 }
 
 func AddBook(c echo.Context) error {
@@ -80,7 +83,7 @@ func AddBook(c echo.Context) error {
 func UpdateBook(c echo.Context) error {
 	id, err := strconv.ParseInt(c.Param("bookID"), 10, 64)
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]interface{}{
+		return c.JSON(http.StatusBadRequest, map[string]string{
 			"status":  "failed",
 			"message": "Book ID is invalid",
 		})
@@ -116,13 +119,16 @@ func UpdateBook(c echo.Context) error {
 		}
 	}
 
-	return c.JSON(http.StatusNoContent, "")
+	return c.JSON(http.StatusBadRequest, map[string]string{
+		"status":  "failed",
+		"message": "Book not found",
+	})
 }
 
 func DeleteBook(c echo.Context) error {
 	id, err := strconv.ParseInt(c.Param("bookID"), 10, 64)
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, map[string]interface{}{
+		return c.JSON(http.StatusBadRequest, map[string]string{
 			"status":  "failed",
 			"message": "Book ID is invalid",
 		})
@@ -138,5 +144,8 @@ func DeleteBook(c echo.Context) error {
 		}
 	}
 
-	return c.JSON(http.StatusNoContent, "")
+	return c.JSON(http.StatusBadRequest, map[string]string{
+		"status":  "failed",
+		"message": "Book not found",
+	})
 }
