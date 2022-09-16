@@ -69,8 +69,12 @@ func GetBookByID(c echo.Context) error {
 
 func AddBook(c echo.Context) error {
 	var book models.Book
-
 	c.Bind(&book)
+
+	if err := c.Validate(book); err != nil {
+		return err
+	}
+
 	book.ID = time.Now().Unix()
 	books = append(books, book)
 

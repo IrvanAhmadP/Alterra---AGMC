@@ -39,6 +39,10 @@ func AddUser(c echo.Context) error {
 	var user models.User
 	c.Bind(&user)
 
+	if err := c.Validate(user); err != nil {
+		return err
+	}
+
 	err := database.AddUser(user)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
