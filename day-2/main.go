@@ -3,7 +3,6 @@ package main
 import (
 	"agmc/config"
 	"agmc/routes"
-	"fmt"
 )
 
 func init() {
@@ -13,7 +12,6 @@ func init() {
 	if configENV["APP_ENV"] == "local" {
 		config.InitMigrate()
 	}
-	fmt.Println(configENV)
 }
 
 func main() {
