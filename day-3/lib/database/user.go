@@ -2,8 +2,24 @@ package database
 
 import (
 	"agmc/config"
+	"agmc/middlewares"
 	"agmc/models"
 )
+
+func LoginUser(req models.User) (interface{}, error) {
+	var user models.User
+	var err error
+
+	if err = config.DB.Where("email = ? AND password = ?", req.Email, req.Password).First(&user).Error; err != nil {
+		return nil, err
+	}
+
+	user.Token, err = middlewares.CreateToken(int(user.ID))
+	if err != nil {
+		return nil, err
+	}
+	return user, nil
+}
 
 func GetUsers() ([]models.User, error) {
 	var users []models.User

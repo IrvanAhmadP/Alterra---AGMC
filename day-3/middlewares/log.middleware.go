@@ -6,5 +6,7 @@ import (
 )
 
 func LogMiddleware(e *echo.Echo) {
-	e.Use(middleware.LoggerWithConfig(middleware.DefaultLoggerConfig))
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "time=${time_rfc3339}, remote_ip=${remote_ip}, error=${error} method=${method}, uri=${uri}, status=${status}\n",
+	}))
 }

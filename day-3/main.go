@@ -2,6 +2,7 @@ package main
 
 import (
 	"agmc/config"
+	"agmc/lib/helpers"
 	m "agmc/middlewares"
 	"agmc/routes"
 )
@@ -9,8 +10,8 @@ import (
 func init() {
 	config.InitDB()
 
-	configENV := config.GetConfig()
-	if configENV["APP_ENV"] == "local" {
+	appEnv := helpers.GetAppEnvConfig()
+	if appEnv == "local" {
 		config.InitMigrate()
 	}
 

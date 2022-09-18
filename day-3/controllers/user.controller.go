@@ -9,6 +9,21 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
+func LoginUser(c echo.Context) error {
+	user := models.User{}
+	c.Bind(&user)
+
+	users, err := database.LoginUser(user)
+	if err != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, err.Error())
+	}
+
+	return c.JSON(http.StatusOK, map[string]interface{}{
+		"status": "success",
+		"users":  users,
+	})
+}
+
 func GetUsers(c echo.Context) error {
 	users, err := database.GetUsers()
 	if err != nil {
@@ -40,7 +55,10 @@ func AddUser(c echo.Context) error {
 	c.Bind(&user)
 
 	if err := c.Validate(user); err != nil {
-		return err
+		return c.JSON(http.StatusBadRequest, map[string]string{
+			"status":  "failed",
+			"message": err.Error(),
+		})
 	}
 
 	err := database.AddUser(user)

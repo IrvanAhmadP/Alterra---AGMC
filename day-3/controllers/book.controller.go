@@ -72,7 +72,10 @@ func AddBook(c echo.Context) error {
 	c.Bind(&book)
 
 	if err := c.Validate(book); err != nil {
-		return err
+		return c.JSON(http.StatusBadRequest, map[string]string{
+			"status":  "failed",
+			"message": err.Error(),
+		})
 	}
 
 	book.ID = time.Now().Unix()

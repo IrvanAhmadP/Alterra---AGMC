@@ -2,6 +2,7 @@ package routes
 
 import (
 	"agmc/controllers"
+	"agmc/middlewares"
 
 	"github.com/go-playground/validator/v10"
 
@@ -23,21 +24,21 @@ func (cv *CustomValidator) Validate(i interface{}) error {
 func New() *echo.Echo {
 	e := echo.New()
 	e.Validator = &CustomValidator{validator: validator.New()}
-	v1 := e.Group("v1/")
 
-	book := v1.Group("books")
+	book := e.Group("books")
 	book.GET("", controllers.GetBooks)
 	book.GET("/:bookID", controllers.GetBookByID)
-	book.POST("", controllers.AddBook)
-	book.PUT("/:bookID", controllers.UpdateBook)
-	book.DELETE("/:bookID", controllers.DeleteBook)
+	book.POST("", controllers.AddBook, middlewares.Auth)
+	book.PUT("/:bookID", controllers.UpdateBook, middlewares.Auth)
+	book.DELETE("/:bookID", controllers.DeleteBook, middlewares.Auth)
 
-	user := v1.Group("users")
-	user.GET("", controllers.GetUsers)
-	user.GET("/:userID", controllers.GetUserByID)
+	user := e.Group("users")
+	user.POST("/login", controllers.LoginUser)
+	user.GET("", controllers.GetUsers, middlewares.Auth)
+	user.GET("/:userID", controllers.GetUserByID, middlewares.Auth)
 	user.POST("", controllers.AddUser)
-	user.PUT("/:userID", controllers.UpdateUser)
-	user.DELETE("/:userID", controllers.DeleteUser)
+	user.PUT("/:userID", controllers.UpdateUser, middlewares.Auth)
+	user.DELETE("/:userID", controllers.DeleteUser, middlewares.Auth)
 
 	return e
 }
