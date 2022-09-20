@@ -36,3 +36,21 @@ Create static CRUD API that meets requirements.
 
 - Implement **log middleware** to Day 2 task
 - Implement **JWT Auth middleware** based on reqirements
+
+## Day 4
+
+**Objective**
+
+Implement Integration Testing
+
+**Tasks**
+
+- Using project previous day, implement integration testing on controller
+- Minimumtest case per function is 2
+  - Valid test case, e.g. http response 200, 201
+  - Invalid test case, e.g. http response 400, 401, 500
+- No minimum coverage percentage but higher is better
+
+# Day 5
+
+Just theory about DDD (Domain Driven Development) & Fundamental Clean Architecture
