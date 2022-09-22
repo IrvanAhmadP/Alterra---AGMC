@@ -1,7 +1,6 @@
 package database
 
 import (
-	"fmt"
 	"os"
 	"sync"
 
@@ -23,7 +22,6 @@ func CreateConnection() {
 		Port: os.Getenv("DB_PORT"),
 		Name: os.Getenv("DB_NAME"),
 	}
-	fmt.Println(conf)
 
 	mysql := mysqlConfig{dbConfig: conf}
 
