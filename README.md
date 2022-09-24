@@ -10,11 +10,11 @@ Participant     : <a target="_blank" href="https://www.linkedin.com/in/irvan-ahm
 
 ## Day 1
 
-**Objectives**
+**Objectives:**
 
 - Create Postman collection (JSON file)
 - Create Postman environment
-- Implement HTTP Method (GET, POST, UPDATE, DELETE)
+- Implement HTTP Method (GET, POST, UPDATE, DELETE).
 
 **Tasks**
 
@@ -22,11 +22,11 @@ Do request to the following API target by using Postman environment, save the re
 
 ## Day 2
 
-**Objective**
+**Objective:**
 
 - Organize code using MVC pattern
 - Create static CRUD API using Echo
-- Create dynamic CRUD API that connect to database using Echo & Gorm
+- Create dynamic CRUD API that connect to database using Echo & Gorm.
 
 **Tasks**
 
@@ -35,49 +35,49 @@ Create static CRUD API that meets requirements.
 
 ## Day 3
 
-**Objective**
+**Objective:**
 
 - Log Implementation
-- Implementing JWT Auth for Protecting API
+- Implementing JWT Auth for Protecting API.
 
-**Tasks**
+**Tasks:**
 
 - Implement **log middleware** to Day 2 task
-- Implement **JWT Auth middleware** based on reqirements
+- Implement **JWT Auth middleware** based on reqirements.
 
 ## Day 4
 
 **Objective**
 
-Implement Integration Testing
+Implement Integration Testing.
 
-**Tasks**
+**Tasks:**
 
 - Using project previous day, implement integration testing on controller
 - Minimumtest case per function is 2
   - Valid test case, e.g. http response 200, 201
   - Invalid test case, e.g. http response 400, 401, 500
-- No minimum coverage percentage but higher is better
+- No minimum coverage percentage but higher is better.
 
 ## Day 5
 
-Lerning about DDD (Domain Driven Development) & Fundamental Clean Architecture
+Lerning about DDD (Domain Driven Development) & Fundamental Clean Architecture.
 
 ## Day 6
 
-**Objective**
+**Objective:**
 
 - Implement hexagonal architecture using Echo framework
-- Use GORM and middleware, such as logging and authorization, in hexagonal architecture project
+- Use GORM and middleware, such as logging and authorization, in hexagonal architecture project.
 
-**Tasks**
+**Tasks:**
 
 - Refactor previous MVC project to hexagonal architecture, keep GORM, logging, and authorization middleware also
-- Optional: at least one endpoint do create, read, update, or delete operation to NoSQL database
+- Optional: at least one endpoint do create, read, update, or delete operation to NoSQL database.
 
 ## Day 7
 
-**Tasks**
+**Task**
 
 Dockerize previous project.
 
@@ -93,8 +93,8 @@ Learning about System Design.
 
 **Objective**
 
-- Deployment with CI/CD
+Deployment with CI/CD.
 
-**Tasks**
+**Task**
 
-- Create CI/CD (use github actions) to deploy the project.
+Create CI/CD (use github actions) to deploy the project.
