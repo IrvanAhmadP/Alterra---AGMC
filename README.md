@@ -16,7 +16,7 @@ Participant     : <a target="_blank" href="https://www.linkedin.com/in/irvan-ahm
 - Create Postman environment
 - Implement HTTP Method (GET, POST, UPDATE, DELETE).
 
-**Tasks**
+**Tasks:**
 
 Do request to the following API target by using Postman environment, save the result using “Save Response” (Save as example), then export collection.
 
@@ -47,7 +47,7 @@ Create static CRUD API that meets requirements.
 
 ## Day 4
 
-**Objective**
+**Objective:**
 
 Implement Integration Testing.
 
@@ -77,7 +77,7 @@ Lerning about DDD (Domain Driven Development) & Fundamental Clean Architecture.
 
 ## Day 7
 
-**Task**
+**Task:**
 
 Dockerize previous project.
 
@@ -91,10 +91,10 @@ Learning about System Design.
 
 ## Day 10
 
-**Objective**
+**Objective:**
 
 Deployment with CI/CD.
 
-**Task**
+**Task:**
 
 Create CI/CD (use github actions) to deploy the project.
