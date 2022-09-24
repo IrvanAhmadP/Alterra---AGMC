@@ -1,5 +1,13 @@
 # Advanced Golang Mini Course by Alterra
 
+## About
+
+<pre>
+Event organizer : <a target="_blank" href="https://www.alterra.id/">Alterra</a>
+Mentor          : <a target="_blank" href="https://www.linkedin.com/in/azka-fadhli-ramadhan-9b070313a/">Azka Fadhli Ramadhan</a>
+Participant     : <a target="_blank" href="https://www.linkedin.com/in/irvan-ahmad-prasetya-6306a8115/">Irvan Ahmad P.</a>
+</pre>
+
 ## Day 1
 
 **Objectives**
@@ -51,6 +59,42 @@ Implement Integration Testing
   - Invalid test case, e.g. http response 400, 401, 500
 - No minimum coverage percentage but higher is better
 
-# Day 5
+## Day 5
 
-Just theory about DDD (Domain Driven Development) & Fundamental Clean Architecture
+Lerning about DDD (Domain Driven Development) & Fundamental Clean Architecture
+
+## Day 6
+
+**Objective**
+
+- Implement hexagonal architecture using Echo framework
+- Use GORM and middleware, such as logging and authorization, in hexagonal architecture project
+
+**Tasks**
+
+- Refactor previous MVC project to hexagonal architecture, keep GORM, logging, and authorization middleware also
+- Optional: at least one endpoint do create, read, update, or delete operation to NoSQL database
+
+## Day 7
+
+**Tasks**
+
+Dockerize previous project.
+
+## Day 8
+
+Deploy previous project on EC2 (AWS) or Heroku.
+
+## Day 9
+
+Learning about System Design.
+
+## Day 10
+
+**Objective**
+
+- Deployment with CI/CD
+
+**Tasks**
+
+- Create CI/CD (use github actions) to deploy the project.
