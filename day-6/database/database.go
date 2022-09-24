@@ -23,10 +23,12 @@ func CreateConnection() {
 		Name: os.Getenv("DB_NAME"),
 	}
 
-	mysql := mysqlConfig{dbConfig: conf}
+	// mysql := mysqlConfig{dbConfig: conf}
+	postgres := postgresqlConfig{dbConfig: conf}
 
 	once.Do(func() {
-		mysql.Connect()
+		// mysql.Connect()
+		postgres.Connect()
 	})
 }
 
