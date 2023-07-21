@@ -35,7 +35,7 @@ func CreateConnection() {
 // GetConnection is a faction for return connection or return value dbConn
 // because we set var dbConn is private
 func GetConnection() *gorm.DB {
-	if dbConn != nil {
+	if dbConn == nil {
 		CreateConnection()
 	}
 	return dbConn
